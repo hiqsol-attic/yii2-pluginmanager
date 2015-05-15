@@ -7,12 +7,28 @@
 
 namespace hiqdev\pluginmanager;
 
-use Yii;
-
 /**
  * Plugin Class.
+ * Collection of items that plugin brings.
  *
- * Colletion of items that pluging brings.
+ * Example:
+ * ~~~
+ * class Plugin extends \hiqdev\pluginmanager\Plugin
+ * {
+ *     protected $_items = [
+ *         'menus' => [
+ *             [
+ *                 'class' => 'hipanel\modules\client\SidebarMenu',
+ *             ],
+ *         ],
+ *         'modules' => [
+ *             'client' => [
+ *                 'class' => 'hipanel\modules\client\Module',
+ *             ],
+ *         ],
+ *     ];
+ * }
+ * ~~~
  */
 class Plugin extends \hiqdev\collection\Object
 {
