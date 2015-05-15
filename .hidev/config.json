@@ -60,7 +60,7 @@
         },
         "autoload": {
             "psr-4": {
-                "hiqdev\\yii2-pluginmanager\\": ""
+                "hiqdev\\pluginmanager\\": ""
             }
         }
     }
