@@ -21,20 +21,26 @@ use yii\base\BootstrapInterface;
 class Manager extends \hiqdev\collection\Object implements BootstrapInterface
 {
     /**
-     * @var array plugins array
+     * Adds given plugins. Doesn't delete old.
      */
-    protected $_plugins = [];
-
-    public function getPlugins()
+    public function setPlugins(array $plugins)
     {
-        return $this->_plugins;
+        return $this->setItem('plugins', array_merge((array)$this->rawItem('plugins'), $plugins));
     }
+
+    /**
+     * @var boolean is already bootstrapped.
+     */
+    protected $_isBootstrapped = false;
 
     /**
      * @inheritdoc
      */
     public function bootstrap($app)
     {
+        if ($this->_isBootstrapped) {
+            return;
+        }
         $cached = null;
         if ($cached) {
             $this->mset($cached);
@@ -51,7 +57,7 @@ class Manager extends \hiqdev\collection\Object implements BootstrapInterface
                         if ($plugin instanceof BootstrapInterface) {
                             $plugin->bootstrap($app);
                         }
-                        $this->_plugins[$name] = $plugin;
+                        $this->setPlugins([$name => $plugin]);
                         foreach ($plugin->getItems() as $k => $v) {
                             $this->_items[$k] = array_merge((array)$this->_items[$k], $v);
                         }
@@ -61,6 +67,13 @@ class Manager extends \hiqdev\collection\Object implements BootstrapInterface
             $cached = $this->toArray();
         }
         $app->modules = array_merge($this->modules, $app->modules);
+        $this->_isBootstrapped = true;
+        if ($app->has('menuManager')) {
+            $app->menuManager->bootstrap($app);
+        }
+        if ($app->has('themeManager')) {
+            $app->themeManager->bootstrap($app);
+        }
     }
 
 }
