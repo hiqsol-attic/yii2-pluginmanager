@@ -15,10 +15,12 @@ use yii\base\BootstrapInterface;
  *
  * Usage, in config:
  * ~~~
- *
+ * 'pluginManager' => [
+ *     'class' => 'hiqdev\pluginmanager\PluginManager',
+ * ],
  * ~~~
  */
-class Manager extends \hiqdev\collection\Object implements BootstrapInterface
+class PluginManager extends \hiqdev\collection\Object implements BootstrapInterface
 {
     /**
      * Adds given plugins. Doesn't delete old.
