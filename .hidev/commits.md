@@ -3,6 +3,8 @@ hiqdev/yii2-pluginmanager commits history
 
 ## Under development
 
+- hideved
+    - c2d4394 2015-06-12 hideved (sol@hiqdev.com)
     - a651619 2015-06-12 renamed to PluginManager.php (sol@hiqdev.com)
     - 7986630 2015-05-20 + prevent double bootstrap + bootstrap menu/themeManager (sol@hiqdev.com)
 - inited
