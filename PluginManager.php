@@ -68,7 +68,7 @@ class PluginManager extends \hiqdev\collection\Object implements BootstrapInterf
             }
             $cached = $this->toArray();
         }
-        $app->modules = array_merge($this->modules, $app->modules);
+        $app->modules = array_merge((array)$this->modules, $app->modules);
         $this->_isBootstrapped = true;
         if ($app->has('menuManager')) {
             $app->menuManager->bootstrap($app);
