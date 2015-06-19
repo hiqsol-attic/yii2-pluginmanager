@@ -1,8 +1,12 @@
 <?php
-/**
- * @link    http://hiqdev.com/yii2-pluginmanager
- * @license http://hiqdev.com/yii2-pluginmanager/license
- * @copyright Copyright (c) 2015 HiQDev
+
+/*
+ * Plugin Manager for Yii2
+ *
+ * @link      https://github.com/hiqdev/yii2-pluginmanager
+ * @package   yii2-pluginmanager
+ * @license   BSD-3-Clause
+ * @copyright Copyright (c) 2015, HiQDev (https://hiqdev.com/)
  */
 
 namespace hiqdev\pluginmanager;
@@ -11,7 +15,7 @@ use Yii;
 use yii\base\BootstrapInterface;
 
 /**
- * Plugin Manager
+ * Plugin Manager.
  *
  * Usage, in config:
  * ~~~
@@ -27,11 +31,11 @@ class PluginManager extends \hiqdev\collection\Object implements BootstrapInterf
      */
     public function setPlugins(array $plugins)
     {
-        return $this->setItem('plugins', array_merge((array)$this->rawItem('plugins'), $plugins));
+        return $this->setItem('plugins', array_merge((array) $this->rawItem('plugins'), $plugins));
     }
 
     /**
-     * @var boolean is already bootstrapped.
+     * @var bool is already bootstrapped.
      */
     protected $_isBootstrapped = false;
 
@@ -49,7 +53,7 @@ class PluginManager extends \hiqdev\collection\Object implements BootstrapInterf
         } else {
             foreach ($app->extensions as $name => $extension) {
                 foreach ($extension['alias'] as $alias => $path) {
-                    $class = strtr(substr($alias,1) . '/' . 'Plugin', '/','\\');
+                    $class = strtr(substr($alias, 1) . '/' . 'Plugin', '/', '\\');
                     if (!class_exists($class)) {
                         continue;
                     }
@@ -61,14 +65,14 @@ class PluginManager extends \hiqdev\collection\Object implements BootstrapInterf
                         }
                         $this->setPlugins([$name => $plugin]);
                         foreach ($plugin->getItems() as $k => $v) {
-                            $this->_items[$k] = array_merge((array)$this->_items[$k], $v);
+                            $this->_items[$k] = array_merge((array) $this->_items[$k], $v);
                         }
                     }
                 }
             }
             $cached = $this->toArray();
         }
-        $app->modules = array_merge((array)$this->modules, $app->modules);
+        $app->modules          = array_merge((array) $this->modules, $app->modules);
         $this->_isBootstrapped = true;
         if ($app->has('menuManager')) {
             $app->menuManager->bootstrap($app);
@@ -77,5 +81,4 @@ class PluginManager extends \hiqdev\collection\Object implements BootstrapInterf
             $app->themeManager->bootstrap($app);
         }
     }
-
 }

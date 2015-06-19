@@ -1,8 +1,12 @@
 <?php
-/**
- * @link    http://hiqdev.com/yii2-pluginmanager
- * @license http://hiqdev.com/yii2-pluginmanager/license
- * @copyright Copyright (c) 2015 HiQDev
+
+/*
+ * Plugin Manager for Yii2
+ *
+ * @link      https://github.com/hiqdev/yii2-pluginmanager
+ * @package   yii2-pluginmanager
+ * @license   BSD-3-Clause
+ * @copyright Copyright (c) 2015, HiQDev (https://hiqdev.com/)
  */
 
 namespace hiqdev\pluginmanager;
