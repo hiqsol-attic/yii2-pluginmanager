@@ -3,6 +3,8 @@ hiqdev/yii2-pluginmanager commits history
 
 ## Under development
 
+- php-cs-fixed
+    - 368c50d 2015-06-19 php-cs-fixed (sol@hiqdev.com)
     - c647fd9 2015-06-19 tiny fix (sol@hiqdev.com)
 - hideved
     - c2d4394 2015-06-12 hideved (sol@hiqdev.com)
