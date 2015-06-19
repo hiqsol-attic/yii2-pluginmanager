@@ -1,7 +1,10 @@
 hiqdev/yii2-pluginmanager commits history
 -----------------------------------------
 
-## Under development
+## 0.0.2 Under development
+
+
+## 0.0.1 June 19, 2015
 
 - php-cs-fixed
     - b6da1d9 2015-06-19 php-cs-fixed (sol@hiqdev.com)
