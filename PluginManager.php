@@ -72,7 +72,13 @@ class PluginManager extends \hiqdev\collection\Object implements BootstrapInterf
             }
             $cached = $this->toArray();
         }
-        $app->modules          = array_merge((array) $this->modules, $app->modules);
+        $app->modules = array_merge((array) $this->modules, $app->modules);
+        $aliases      = $this->getItem('aliases');
+        if ($aliases) {
+            foreach ($aliases as $name => $alias) {
+                Yii::setAlias($name, $alias);
+            }
+        }
         $this->_isBootstrapped = true;
         if ($app->has('menuManager')) {
             $app->menuManager->bootstrap($app);
