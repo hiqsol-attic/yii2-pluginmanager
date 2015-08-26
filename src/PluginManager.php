@@ -40,7 +40,7 @@ class PluginManager extends \hiqdev\collection\Object implements BootstrapInterf
     protected $_isBootstrapped = false;
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function bootstrap($app)
     {

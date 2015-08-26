@@ -3,6 +3,8 @@ hiqdev/yii2-pluginmanager commits history
 
 ## 0.0.2 Under development
 
+- Changed: moved to src
+    - e3ceae0 2015-08-26 moved to src (sol@hiqdev.com)
     - d09e0c7 2015-08-02 + aliases setting (sol@hiqdev.com)
 
 ## 0.0.1 June 19, 2015
