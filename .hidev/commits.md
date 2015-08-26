@@ -3,6 +3,7 @@ hiqdev/yii2-pluginmanager commits history
 
 ## 0.0.2 Under development
 
+    - d09e0c7 2015-08-02 + aliases setting (sol@hiqdev.com)
 
 ## 0.0.1 June 19, 2015
 
