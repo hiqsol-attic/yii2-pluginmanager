@@ -48,7 +48,7 @@
     },
     "autoload": {
         "psr-4": {
-            "hiqdev\\pluginmanager\\": ""
+            "hiqdev\\pluginmanager\\": "src"
         }
     }
 }
