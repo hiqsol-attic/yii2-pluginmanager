@@ -11,6 +11,7 @@
 
 namespace hiqdev\pluginmanager;
 
+use hipanel\helpers\ArrayHelper;
 use Yii;
 use yii\base\BootstrapInterface;
 
@@ -73,11 +74,13 @@ class PluginManager extends \hiqdev\collection\Object implements BootstrapInterf
             $cached = $this->toArray();
         }
         $app->modules = array_merge((array) $this->modules, $app->modules);
-        $aliases      = $this->getItem('aliases');
-        if ($aliases) {
+        if ($aliases = $this->getItem('aliases')) {
             foreach ($aliases as $name => $alias) {
                 Yii::setAlias($name, $alias);
             }
+        }
+        if ($translations = $this->getItem('translations')) {
+            Yii::$app->i18n->translations = ArrayHelper::merge(Yii::$app->i18n->translations, $translations);
         }
         $this->_isBootstrapped = true;
         if ($app->has('menuManager')) {
