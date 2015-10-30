@@ -1,10 +1,11 @@
 Plugin Manager for Yii2
------------------------
+=======================
 
 Plugin Manager for Yii2
 
-[![Latest Stable Version](https://poser.pugx.org/hiqdev/yii2-pluginmanager/v/stable.png)](https://packagist.org/packages/hiqdev/yii2-pluginmanager)
-[![Total Downloads](https://poser.pugx.org/hiqdev/yii2-pluginmanager/downloads.png)](https://packagist.org/packages/hiqdev/yii2-pluginmanager)
+[![Latest Stable Version](https://poser.pugx.org/hiqdev/yii2-pluginmanager/v/stable)](//packagist.org/packages/hiqdev/yii2-pluginmanager)
+[![Total Downloads](https://poser.pugx.org/hiqdev/yii2-pluginmanager/downloads)](//packagist.org/packages/hiqdev/yii2-pluginmanager)
+[![Dependency Status](https://www.versioneye.com/php/hiqdev:yii2-pluginmanager/dev-master/badge.svg)](https://www.versioneye.com/php/hiqdev:yii2-pluginmanager/dev-master)
 
 ## Installation
 
@@ -24,8 +25,9 @@ or add
 
 to the require section of your composer.json.
 
-## Licence
+## License
 
-[BSD-3-Clause](http://choosealicense.com/licenses/bsd-3-clause)
+This project is released under the terms of the BSD-3-Clause [license](https://github.com/hiqdev/yii2-pluginmanager/blob/master/LICENSE).
+Read more [here](http://choosealicense.com/licenses/bsd-3-clause).
 
-Copyright © 2015, HiQDev (https://hiqdev.com/)
+Copyright © 2015, HiQDev (http://hiqdev.com/)
