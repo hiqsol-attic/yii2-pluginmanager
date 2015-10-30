@@ -1,15 +1,18 @@
 hiqdev/yii2-pluginmanager changelog
 -----------------------------------
 
-## 0.0.2 Under development
+## 0.0.3 Under development
+
+
+## 0.0.2 2015-10-30
 
 - Added items() for default items with function
 - Added handling 'translations'
 - Changed: moved to src
 
-## 0.0.1 June 19, 2015
+## 0.0.1 2015-06-19
 
 - Added basics
 
-## Development started May 15, 2015
+## Development started 2015-06-19
 

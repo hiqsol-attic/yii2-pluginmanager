@@ -1,7 +1,10 @@
 hiqdev/yii2-pluginmanager commits history
 -----------------------------------------
 
-## 0.0.2 Under development
+## 0.0.3 Under development
+
+
+## 0.0.2 2015-10-30
 
 - Added items() for default items with function
     - 304db1e 2015-10-30 added items() for default items (sol@hiqdev.com)
@@ -11,7 +14,7 @@ hiqdev/yii2-pluginmanager commits history
     - e3ceae0 2015-08-26 moved to src (sol@hiqdev.com)
     - d09e0c7 2015-08-02 + aliases setting (sol@hiqdev.com)
 
-## 0.0.1 June 19, 2015
+## 0.0.1 2015-06-19
 
 - Added basics
     - b6da1d9 2015-06-19 php-cs-fixed (sol@hiqdev.com)
@@ -24,5 +27,5 @@ hiqdev/yii2-pluginmanager commits history
     - 648bab1 2015-05-15 + docs (sol@hiqdev.com)
     - c28936b 2015-05-15 inited (sol@hiqdev.com)
 
-## Development started May 15, 2015
+## Development started 2015-06-19
 
