@@ -21,9 +21,7 @@ namespace hiqdev\pluginmanager;
  * {
  *     protected $_items = [
  *         'menus' => [
- *             [
- *                 'class' => 'hipanel\modules\client\SidebarMenu',
- *             ],
+ *             'hipanel\modules\client\SidebarMenu',
  *         ],
  *         'modules' => [
  *             'client' => [
@@ -36,4 +34,22 @@ namespace hiqdev\pluginmanager;
  */
 class Plugin extends \hiqdev\collection\Object
 {
+    /**
+     * Default items.
+     *
+     * @return array
+     */
+    public function items()
+    {
+        return [];
+    }
+
+    /**
+     * Inits with default items.
+     */
+    public function init()
+    {
+        parent::init();
+        $this->addItems($this->items());
+    }
 }
