@@ -6,7 +6,7 @@
  * @link      https://github.com/hiqdev/yii2-pluginmanager
  * @package   yii2-pluginmanager
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2015, HiQDev (https://hiqdev.com/)
+ * @copyright Copyright (c) 2015, HiQDev (http://hiqdev.com/)
  */
 
 namespace hiqdev\pluginmanager;
@@ -29,9 +29,8 @@ use yii\helpers\ArrayHelper;
 class PluginManager extends \hiqdev\collection\Object implements BootstrapInterface
 {
     /**
-     * @var int|boolean the duration of caching in seconds
-     * When false - caching is disabled.
-     * Defaults to 3600.
+     * @var int|bool the duration of caching in seconds, default 3600
+     *               When false - caching is disabled.
      */
     public $cacheDuration = 3600;
 
@@ -102,10 +101,12 @@ class PluginManager extends \hiqdev\collection\Object implements BootstrapInterf
     }
 
     /**
-     * Gets the items from the cache. The key is generated automatically using [[buildCacheKey()]]
+     * Gets the items from the cache. The key is generated automatically using [[buildCacheKey()]].
      *
      * @param $app Application The application instance
+     *
      * @return mixed
+     *
      * @see buildCacheKey()
      */
     protected function getCache($app)
@@ -113,15 +114,18 @@ class PluginManager extends \hiqdev\collection\Object implements BootstrapInterf
         if ($this->cacheDuration === false) {
             return [];
         }
+
         return Yii::$app->cache->get($this->buildCacheKey($app));
     }
 
     /**
-     * Sets the $value to the cache. The key is generated with [[buildCacheKey()]]
+     * Sets the $value to the cache. The key is generated with [[buildCacheKey()]].
      *
      * @param $app Application The application instance
      * @param $value mixed
-     * @return boolean
+     *
+     * @return bool
+     *
      * @see buildCacheKey()
      */
     protected function setCache($app, $value)
@@ -131,6 +135,7 @@ class PluginManager extends \hiqdev\collection\Object implements BootstrapInterf
 
     /**
      * @param $app Application
+     *
      * @return array
      */
     protected function buildCacheKey($app)
