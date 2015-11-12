@@ -1,9 +1,16 @@
 hiqdev/yii2-pluginmanager commits history
 -----------------------------------------
 
-## 0.0.3 Under development
+## Under development
 
+
+## 0.0.3 2015-11-12
+
+- Fixed minor issues
+    - 2342432 2015-11-12 php-cs-fixed (sol@hiqdev.com)
+    - 91617e9 2015-11-12 improved package description (sol@hiqdev.com)
     - 8fde1da 2015-11-12 fixed yii\helpers\ArrayHelper <- hipanel\helpers\ArrayHelper (sol@hiqdev.com)
+- Added caching
     - 3c76f87 2015-11-05 Implemented caching (d.naumenko.a@gmail.com)
 
 ## 0.0.2 2015-10-30

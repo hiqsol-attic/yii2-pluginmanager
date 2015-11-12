@@ -1,8 +1,13 @@
 hiqdev/yii2-pluginmanager changelog
 -----------------------------------
 
-## 0.0.3 Under development
+## Under development
 
+
+## 0.0.3 2015-11-12
+
+- Fixed minor issues
+- Added caching
 
 ## 0.0.2 2015-10-30
 
