@@ -11,10 +11,10 @@
 
 namespace hiqdev\pluginmanager;
 
-use hipanel\helpers\ArrayHelper;
 use Yii;
 use yii\base\Application;
 use yii\base\BootstrapInterface;
+use yii\helpers\ArrayHelper;
 
 /**
  * Plugin Manager.
