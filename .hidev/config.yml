@@ -1,11 +1,14 @@
 package:
     name:           yii2-pluginmanager
     namespace:      hiqdev\pluginmanager
-    label:          PluginManager
+    headline:       Yii2 Plugin Manager
     title:          Plugin Manager for Yii2
     type:           yii2-extension
     keywords:       plugin, manager, extension, yii2
     year:           2015
+    description:    |
+        Provides plugin system for Yii2.
+        Automatic loading of plugins configurations with caching.
 
 require:
     hiqdev/hidev-config:        "*"

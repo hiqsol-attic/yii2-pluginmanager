@@ -1,11 +1,14 @@
-Plugin Manager for Yii2
-=======================
+Yii2 Plugin Manager
+===================
 
-Plugin Manager for Yii2
+**Plugin Manager for Yii2**
 
 [![Latest Stable Version](https://poser.pugx.org/hiqdev/yii2-pluginmanager/v/stable)](//packagist.org/packages/hiqdev/yii2-pluginmanager)
 [![Total Downloads](https://poser.pugx.org/hiqdev/yii2-pluginmanager/downloads)](//packagist.org/packages/hiqdev/yii2-pluginmanager)
 [![Dependency Status](https://www.versioneye.com/php/hiqdev:yii2-pluginmanager/dev-master/badge.svg)](https://www.versioneye.com/php/hiqdev:yii2-pluginmanager/dev-master)
+
+Provides plugin system for Yii2.
+Automatic loading of plugins configurations with caching.
 
 ## Installation
 

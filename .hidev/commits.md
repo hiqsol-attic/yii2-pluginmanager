@@ -3,6 +3,8 @@ hiqdev/yii2-pluginmanager commits history
 
 ## 0.0.3 Under development
 
+    - 8fde1da 2015-11-12 fixed yii\helpers\ArrayHelper <- hipanel\helpers\ArrayHelper (sol@hiqdev.com)
+    - 3c76f87 2015-11-05 Implemented caching (d.naumenko.a@gmail.com)
 
 ## 0.0.2 2015-10-30
 
