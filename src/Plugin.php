@@ -32,7 +32,7 @@ namespace hiqdev\pluginmanager;
  * }
  * ~~~
  */
-class Plugin extends \hiqdev\collection\Object
+class Plugin extends \hiqdev\yii2\collection\Object
 {
     /**
      * Default items.

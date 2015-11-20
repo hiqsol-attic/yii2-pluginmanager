@@ -27,7 +27,7 @@ use yii\helpers\ArrayHelper;
  * ],
  * ~~~
  */
-class PluginManager extends \hiqdev\collection\Object implements BootstrapInterface
+class PluginManager extends \hiqdev\yii2\collection\Object implements BootstrapInterface
 {
     /**
      * @var int|bool the duration of caching in seconds, default 3600
@@ -58,7 +58,7 @@ class PluginManager extends \hiqdev\collection\Object implements BootstrapInterf
         }
         if ($cache = $this->getCache($app)) {
             Yii::trace('Bootstrap from cache', get_called_class() . '::bootstrap');
-            $this->mset($cache);
+            $this->setItems($cache);
             $this->toArray();
         } else {
             Yii::trace('Bootstrap plugins from the list of extensions', get_called_class() . '::bootstrap');
