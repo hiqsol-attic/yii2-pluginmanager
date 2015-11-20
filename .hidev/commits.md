@@ -3,6 +3,8 @@ hiqdev/yii2-pluginmanager commits history
 
 ## Under development
 
+- Added merging components
+    - 64fb85f 2015-11-20 + merge components (sol@hiqdev.com)
 
 ## 0.0.3 2015-11-12
 

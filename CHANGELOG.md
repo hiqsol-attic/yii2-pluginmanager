@@ -3,6 +3,7 @@ hiqdev/yii2-pluginmanager changelog
 
 ## Under development
 
+- Added merging components
 
 ## 0.0.3 2015-11-12
 

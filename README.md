@@ -30,7 +30,7 @@ to the require section of your composer.json.
 
 ## License
 
-This project is released under the terms of the BSD-3-Clause [license](https://github.com/hiqdev/yii2-pluginmanager/blob/master/LICENSE).
+This project is released under the terms of the BSD-3-Clause [license](LICENSE).
 Read more [here](http://choosealicense.com/licenses/bsd-3-clause).
 
 Copyright © 2015, HiQDev (http://hiqdev.com/)
