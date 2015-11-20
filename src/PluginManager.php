@@ -12,6 +12,7 @@
 namespace hiqdev\pluginmanager;
 
 use Yii;
+use ReflectionClass;
 use yii\base\Application;
 use yii\base\BootstrapInterface;
 use yii\helpers\ArrayHelper;
@@ -67,29 +68,30 @@ class PluginManager extends \hiqdev\collection\Object implements BootstrapInterf
                     if (!class_exists($class)) {
                         continue;
                     }
-                    $ref = new \ReflectionClass($class);
+                    $ref = new ReflectionClass($class);
                     if ($ref->isSubclassOf('hiqdev\pluginmanager\Plugin')) {
                         $plugin = Yii::createObject($class);
                         if ($plugin instanceof BootstrapInterface) {
                             $plugin->bootstrap($app);
                         }
                         $this->setPlugins([$name => $plugin]);
+                        // $this->mergeItems($plugin->getItems());
                         foreach ($plugin->getItems() as $k => $v) {
-                            $this->_items[$k] = array_merge((array) $this->_items[$k], $v);
+                            $this->_items[$k] = ArrayHelper::merge((array) $this->_items[$k], $v);
                         }
                     }
                 }
             }
             $this->setCache($app, $this->toArray());
         }
-        $app->modules = array_merge((array) $this->modules, $app->modules);
-        if ($aliases = $this->getItem('aliases')) {
-            foreach ($aliases as $name => $alias) {
-                Yii::setAlias($name, $alias);
-            }
+        if ($this->aliases) {
+            $app->setAliases($this->aliases);
         }
-        if ($translations = $this->getItem('translations')) {
-            Yii::$app->i18n->translations = ArrayHelper::merge(Yii::$app->i18n->translations, $translations);
+        if ($this->modules) {
+            $app->setModules(ArrayHelper::merge($this->modules, $app->modules));
+        }
+        if ($this->components) {
+            $app->setComponents(ArrayHelper::merge($this->components, $app->components));
         }
         $this->_isBootstrapped = true;
         if ($app->has('menuManager')) {
