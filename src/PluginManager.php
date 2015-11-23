@@ -93,6 +93,10 @@ class PluginManager extends \hiqdev\yii2\collection\Object implements BootstrapI
         if ($this->components) {
             $app->setComponents(ArrayHelper::merge($this->components, $app->components));
         }
+        /// TODO: get rid of. Line above produces endless loop.
+        if ($translations = $this->getItem('translations')) {
+            Yii::$app->i18n->translations = ArrayHelper::merge(Yii::$app->i18n->translations, $translations);
+        }
         $this->_isBootstrapped = true;
         if ($app->has('menuManager')) {
             $app->menuManager->bootstrap($app);
