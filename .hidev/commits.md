@@ -3,7 +3,11 @@ hiqdev/yii2-pluginmanager commits history
 
 ## Under development
 
+
+## 0.0.4 2015-11-24
+
 - Added merging components
+    - 4c75ed5 2015-11-23 PluginManaged - added BC-patch for translations (d.naumenko.a@gmail.com)
     - 45d6a1f 2015-11-20 fixed `hiqdev\yii2\collection` namespace (sol@hiqdev.com)
     - 64fb85f 2015-11-20 + merge components (sol@hiqdev.com)
 
