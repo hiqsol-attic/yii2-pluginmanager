@@ -3,6 +3,12 @@ hiqdev/yii2-pluginmanager commits history
 
 ## Under development
 
+
+## 0.0.5 2015-11-25
+
+- Added tests and Travis CI
+    - 2cb7ece 2015-11-25 added tests (sol@hiqdev.com)
+- Fixed merging modules and components
     - 56bb59f 2015-11-25 improved Plugin::init to check for items() existing (sol@hiqdev.com)
     - 460face 2015-11-25 fixed merging modules and components (sol@hiqdev.com)
     - 2ac15ef 2015-11-25 improved code organization (sol@hiqdev.com)
