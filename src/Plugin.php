@@ -54,7 +54,7 @@ class Plugin extends \hiqdev\yii2\collection\Object
     {
         parent::init();
         if (method_exists($this, 'items')) {
-            $this->addItems($this->items());
+            $this->mergeItems($this->items());
         }
     }
 }

@@ -11,5 +11,5 @@ package:
         Automatic loading of plugins configurations with caching.
 
 require:
-    hiqdev/hidev-config:        "*"
-    hiqdev/hidev-config-php:    "*"
+    hiqdev/hidev-php:    "*"
+    hiqdev/hidev-hiqdev: "*"
