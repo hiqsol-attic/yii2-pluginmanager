@@ -11,11 +11,10 @@
 
 namespace hiqdev\pluginmanager;
 
-use Yii;
 use ReflectionClass;
-use yii\base\Application;
+use Yii;
 use yii\base\BootstrapInterface;
-use yii\helpers\ArrayHelper;
+use hiqdev\php\collection\ArrayHelper;
 
 /**
  * Plugin Manager.
@@ -60,14 +59,15 @@ class PluginManager extends \hiqdev\yii2\collection\Object implements BootstrapI
      */
     public function bootstrap($app)
     {
-        $this->_app = $app;
         if ($this->_isBootstrapped) {
             return;
         }
+        $this->_isBootstrapped = true;
+        $this->_app = $app;
         if ($this->cache) {
             Yii::trace('Bootstrap from cache', get_called_class() . '::bootstrap');
             $this->setItems($this->cache);
-            $this->toArray(); /// XXX strangely doesn't work without it
+            // $this->toArray(); // TODO 2 SilverFire: check and remove this line
         } else {
             Yii::trace('Bootstrap plugins from the list of extensions', get_called_class() . '::bootstrap');
             foreach ($app->extensions as $name => $extension) {
@@ -83,10 +83,7 @@ class PluginManager extends \hiqdev\yii2\collection\Object implements BootstrapI
                             $plugin->bootstrap($app);
                         }
                         $this->setPlugins([$name => $plugin]);
-                        // $this->mergeItems($plugin->getItems());
-                        foreach ($plugin->getItems() as $k => $v) {
-                            $this->_items[$k] = ArrayHelper::merge((array) $this->_items[$k], $v);
-                        }
+                        $this->mergeItems($plugin->getItems());
                     }
                 }
             }
@@ -96,16 +93,15 @@ class PluginManager extends \hiqdev\yii2\collection\Object implements BootstrapI
             $app->setAliases($this->aliases);
         }
         if ($this->modules) {
-            $app->setModules(ArrayHelper::merge($this->modules, $app->modules));
+            $modules = ArrayHelper::getItems($app->modules, array_keys($this->modules));
+            $this->modules = ArrayHelper::merge($this->modules, $modules);
+            $app->setModules($this->modules);
         }
         if ($this->components) {
-            $app->setComponents(ArrayHelper::merge($this->components, $app->components));
+            $components = ArrayHelper::getItems($app->components, array_keys($this->components));
+            $this->components = ArrayHelper::merge($this->components, $components);
+            $app->setComponents($this->components);
         }
-        /// TODO: get rid of. Line above produces endless loop.
-        if ($translations = $this->getItem('translations')) {
-            $app->i18n->translations = ArrayHelper::merge($app->i18n->translations, $translations);
-        }
-        $this->_isBootstrapped = true;
         if ($app->has('menuManager')) {
             $app->menuManager->bootstrap($app);
         }
