@@ -13,7 +13,7 @@ namespace hiqdev\pluginmanager;
 
 /**
  * Plugin Class.
- * Collection of items that plugin brings: aliases, modules, components
+ * Collection of items that plugin brings: aliases, modules, components.
  *
  * Example:
  * ~~~
