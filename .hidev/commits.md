@@ -8,6 +8,7 @@ hiqdev/yii2-pluginmanager commits history
 
 - Added tests and Travis CI
     - 2cb7ece 2015-11-25 added tests (sol@hiqdev.com)
+    - 17c2764 2015-11-25 php-cs-fixed (sol@hiqdev.com)
 - Fixed merging modules and components
     - 56bb59f 2015-11-25 improved Plugin::init to check for items() existing (sol@hiqdev.com)
     - 460face 2015-11-25 fixed merging modules and components (sol@hiqdev.com)
