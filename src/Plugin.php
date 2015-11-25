@@ -13,19 +13,32 @@ namespace hiqdev\pluginmanager;
 
 /**
  * Plugin Class.
- * Collection of items that plugin brings.
+ * Collection of items that plugin brings: aliases, modules, components
  *
  * Example:
  * ~~~
  * class Plugin extends \hiqdev\pluginmanager\Plugin
  * {
  *     protected $_items = [
- *         'menus' => [
- *             'hipanel\modules\client\SidebarMenu',
+ *         'aliases' => [
+ *             '@my/alias' => 'my/path',
  *         ],
  *         'modules' => [
  *             'client' => [
  *                 'class' => 'hipanel\modules\client\Module',
+ *             ],
+ *         ],
+ *         'components' => [
+ *             'i18n' => [
+ *                 'translations' => [
+ *                     'test' => [
+ *                         'class'    => 'yii\i18n\PhpMessageSource',
+ *                         'basePath' => '@my/alias/messages',
+ *                         'fileMap'  => [
+ *                             'test' => 'test.php',
+ *                         ],
+ *                     ],
+ *                 ],
  *             ],
  *         ],
  *     ];
@@ -35,21 +48,13 @@ namespace hiqdev\pluginmanager;
 class Plugin extends \hiqdev\yii2\collection\Object
 {
     /**
-     * Default items.
-     *
-     * @return array
-     */
-    public function items()
-    {
-        return [];
-    }
-
-    /**
-     * Inits with default items.
+     * Inits with default items if any.
      */
     public function init()
     {
         parent::init();
-        $this->addItems($this->items());
+        if (method_exists($this, 'items')) {
+            $this->addItems($this->items());
+        }
     }
 }
