@@ -35,6 +35,13 @@ class PluginManager extends \hiqdev\yii2\collection\Object implements BootstrapI
      */
     public $cacheDuration = 3600;
 
+    protected $_app;
+
+    public function getApp()
+    {
+        return $this->_app;
+    }
+
     /**
      * Adds given plugins. Doesn't delete old.
      */
@@ -53,13 +60,14 @@ class PluginManager extends \hiqdev\yii2\collection\Object implements BootstrapI
      */
     public function bootstrap($app)
     {
+        $this->_app = $app;
         if ($this->_isBootstrapped) {
             return;
         }
-        if ($cache = $this->getCache($app)) {
+        if ($this->cache) {
             Yii::trace('Bootstrap from cache', get_called_class() . '::bootstrap');
-            $this->setItems($cache);
-            $this->toArray();
+            $this->setItems($this->cache);
+            $this->toArray(); /// XXX strangely doesn't work without it
         } else {
             Yii::trace('Bootstrap plugins from the list of extensions', get_called_class() . '::bootstrap');
             foreach ($app->extensions as $name => $extension) {
@@ -82,7 +90,7 @@ class PluginManager extends \hiqdev\yii2\collection\Object implements BootstrapI
                     }
                 }
             }
-            $this->setCache($app, $this->toArray());
+            $this->saveCache($this->toArray());
         }
         if ($this->aliases) {
             $app->setAliases($this->aliases);
@@ -95,7 +103,7 @@ class PluginManager extends \hiqdev\yii2\collection\Object implements BootstrapI
         }
         /// TODO: get rid of. Line above produces endless loop.
         if ($translations = $this->getItem('translations')) {
-            Yii::$app->i18n->translations = ArrayHelper::merge(Yii::$app->i18n->translations, $translations);
+            $app->i18n->translations = ArrayHelper::merge($app->i18n->translations, $translations);
         }
         $this->_isBootstrapped = true;
         if ($app->has('menuManager')) {
@@ -106,51 +114,57 @@ class PluginManager extends \hiqdev\yii2\collection\Object implements BootstrapI
         }
     }
 
+    protected $_cache;
+
+    public function getCache()
+    {
+        if ($this->_cache === null) {
+            $this->_cache = $this->loadCache();
+        }
+
+        return $this->_cache;
+    }
+
     /**
-     * Gets the items from the cache. The key is generated automatically using [[buildCacheKey()]].
+     * Loads items from the cache. The key is generated automatically using [[buildCacheKey()]].
      *
-     * @param $app Application The application instance
-     *
-     * @return mixed
+     * @return array
      *
      * @see buildCacheKey()
      */
-    protected function getCache($app)
+    protected function loadCache()
     {
         if ($this->cacheDuration === false) {
             return [];
         }
 
-        return Yii::$app->cache->get($this->buildCacheKey($app));
+        return $this->app->cache->get($this->buildCacheKey());
     }
 
     /**
-     * Sets the $value to the cache. The key is generated with [[buildCacheKey()]].
+     * Saves the $value to the cache. The key is generated with [[buildCacheKey()]].
      *
-     * @param $app Application The application instance
      * @param $value mixed
      *
      * @return bool
      *
      * @see buildCacheKey()
      */
-    protected function setCache($app, $value)
+    protected function saveCache($value)
     {
-        return Yii::$app->cache->set($this->buildCacheKey($app), $value, $this->cacheDuration);
+        return $this->app->cache->set($this->buildCacheKey(), $value, $this->cacheDuration);
     }
 
     /**
-     * @param $app Application
-     *
      * @return array
      */
-    protected function buildCacheKey($app)
+    protected function buildCacheKey()
     {
         return [
-            'name' => get_called_class(),
-            'app' => $app->className(),
-            'lang' => Yii::$app->language,
-            'extensions' => $app->extensions,
+            'name'       => get_called_class(),
+            'app'        => $this->app->className(),
+            'lang'       => $this->app->language,
+            'extensions' => $this->app->extensions,
         ];
     }
 }
