@@ -11,10 +11,10 @@
 
 namespace hiqdev\pluginmanager;
 
+use hiqdev\php\collection\ArrayHelper;
 use ReflectionClass;
 use Yii;
 use yii\base\BootstrapInterface;
-use hiqdev\php\collection\ArrayHelper;
 
 /**
  * Plugin Manager.
