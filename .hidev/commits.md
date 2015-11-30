@@ -3,6 +3,8 @@ hiqdev/yii2-pluginmanager commits history
 
 ## Under development
 
+- Added `Closure` serializing
+    - ef14873 2015-11-30 + Closure serializing (sol@hiqdev.com)
 
 ## 0.0.5 2015-11-25
 
