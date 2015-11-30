@@ -82,12 +82,12 @@ class PluginManager extends \hiqdev\yii2\collection\Object implements BootstrapI
                         if ($plugin instanceof BootstrapInterface) {
                             $plugin->bootstrap($app);
                         }
-                        $this->setPlugins([$name => $plugin]);
+                        //$this->setPlugins([$name => $plugin]);
                         $this->mergeItems($plugin->getItems());
                     }
                 }
             }
-            $this->saveCache($this->toArray());
+            $this->saveCache($this->getItems());
         }
         if ($this->aliases) {
             $app->setAliases($this->aliases);
@@ -134,7 +134,7 @@ class PluginManager extends \hiqdev\yii2\collection\Object implements BootstrapI
             return [];
         }
 
-        return $this->app->cache->get($this->buildCacheKey());
+        return $this->serializer->unserialize($this->app->cache->get($this->buildCacheKey()));
     }
 
     /**
@@ -148,7 +148,18 @@ class PluginManager extends \hiqdev\yii2\collection\Object implements BootstrapI
      */
     protected function saveCache($value)
     {
-        return $this->app->cache->set($this->buildCacheKey(), $value, $this->cacheDuration);
+        return $this->app->cache->set($this->buildCacheKey(), $this->serializer->serialize($value), $this->cacheDuration);
+    }
+
+    protected $_serializer;
+
+    public function getSerializer()
+    {
+        if ($this->_serializer === null) {
+            $this->_serializer = new Serializer();
+        }
+
+        return $this->_serializer;
     }
 
     /**
