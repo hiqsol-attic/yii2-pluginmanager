@@ -134,7 +134,7 @@ class PluginManager extends \hiqdev\yii2\collection\Object implements BootstrapI
             return [];
         }
 
-        return $this->serializer->unserialize($this->app->cache->get($this->buildCacheKey()));
+        return $this->serializer->unpack($this->app->cache->get($this->buildCacheKey()));
     }
 
     /**
@@ -148,7 +148,7 @@ class PluginManager extends \hiqdev\yii2\collection\Object implements BootstrapI
      */
     protected function saveCache($value)
     {
-        return $this->app->cache->set($this->buildCacheKey(), $this->serializer->serialize($value), $this->cacheDuration);
+        return $this->app->cache->set($this->buildCacheKey(), $this->serializer->pack($value), $this->cacheDuration);
     }
 
     protected $_serializer;
