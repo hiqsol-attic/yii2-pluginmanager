@@ -44,7 +44,7 @@
         }
     ],
     "require": {
-        "hiqdev/yii2-collection": "*@dev",
+        "hiqdev/yii2-collection": "*",
         "jeremeamia/superclosure": "^2.1"
     },
     "autoload": {
