@@ -3,12 +3,13 @@ hiqdev/yii2-pluginmanager commits history
 
 ## Under development
 
-- Added `Closure` serializing
-    - a37c3b4 2015-11-30 made serializing lighter with un/pack <- un/serialize (sol@hiqdev.com)
-    - ef14873 2015-11-30 + Closure serializing (sol@hiqdev.com)
 
 ## 0.0.5 2015-11-25
 
+- Added `Closure` serializing
+    - ff95f07 2015-12-01 fixed require to stable for yii2-collection (sol@hiqdev.com)
+    - a37c3b4 2015-11-30 made serializing lighter with un/pack <- un/serialize (sol@hiqdev.com)
+    - ef14873 2015-11-30 + Closure serializing (sol@hiqdev.com)
 - Added tests and Travis CI
     - 2cb7ece 2015-11-25 added tests (sol@hiqdev.com)
     - 17c2764 2015-11-25 php-cs-fixed (sol@hiqdev.com)

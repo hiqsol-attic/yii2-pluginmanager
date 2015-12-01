@@ -1,9 +1,9 @@
 package:
+    type:           yii2-extension
     name:           yii2-pluginmanager
     namespace:      hiqdev\pluginmanager
     headline:       Yii2 Plugin Manager
     title:          Plugin Manager for Yii2
-    type:           yii2-extension
     keywords:       plugin, manager, extension, yii2
     year:           2015
     description:    |

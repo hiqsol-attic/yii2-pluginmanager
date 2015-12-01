@@ -3,10 +3,10 @@ hiqdev/yii2-pluginmanager changelog
 
 ## Under development
 
-- Added `Closure` serializing
 
 ## 0.0.5 2015-11-25
 
+- Added `Closure` serializing
 - Added tests and Travis CI
 - Fixed merging modules and components
 
