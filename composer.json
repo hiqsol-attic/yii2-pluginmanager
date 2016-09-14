@@ -1,7 +1,7 @@
 {
     "name": "hiqdev/yii2-pluginmanager",
     "type": "yii2-extension",
-    "description": "Plugin Manager for Yii2",
+    "description": "ABANDONED Plugin Manager for Yii2",
     "keywords": [
         "plugin",
         "manager",
@@ -46,6 +46,10 @@
     "require": {
         "hiqdev/yii2-collection": "*",
         "jeremeamia/superclosure": "^2.1"
+    },
+    "require-dev": {
+        "hiqdev/hidev-php": "*@dev",
+        "hiqdev/hidev-hiqdev": "*@dev"
     },
     "autoload": {
         "psr-4": {

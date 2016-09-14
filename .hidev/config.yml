@@ -1,15 +1,10 @@
 package:
     type:           yii2-extension
     name:           yii2-pluginmanager
-    namespace:      hiqdev\pluginmanager
-    headline:       Yii2 Plugin Manager
-    title:          Plugin Manager for Yii2
+    title:          ABANDONED Plugin Manager for Yii2
+    headline:       ABANDONED Yii2 Plugin Manager
     keywords:       plugin, manager, extension, yii2
-    year:           2015
+    namespace:      hiqdev\pluginmanager
     description:    |
-        Provides plugin system for Yii2.
-        Automatic loading of plugins configurations with caching.
-
-require:
-    hiqdev/hidev-php:    "*"
-    hiqdev/hidev-hiqdev: "*"
+        ABANDONED in favour of [hiqdev/composer-config-plugin](https://github.com/hiqdev/composer-config-plugin)
+        =================

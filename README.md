@@ -1,15 +1,17 @@
-Yii2 Plugin Manager
-===================
+ABANDONED Yii2 Plugin Manager
+=============================
 
-**Plugin Manager for Yii2**
+**ABANDONED Plugin Manager for Yii2**
 
-[![Latest Stable Version](https://poser.pugx.org/hiqdev/yii2-pluginmanager/v/stable)](//packagist.org/packages/hiqdev/yii2-pluginmanager)
-[![Total Downloads](https://poser.pugx.org/hiqdev/yii2-pluginmanager/downloads)](//packagist.org/packages/hiqdev/yii2-pluginmanager)
-[![Build Status](https://img.shields.io/travis/hiqdev/yii2-pluginmanager.svg)](http://travis-ci.org/hiqdev/yii2-pluginmanager)
+[![Latest Stable Version](https://poser.pugx.org/hiqdev/yii2-pluginmanager/v/stable)](https://packagist.org/packages/hiqdev/yii2-pluginmanager)
+[![Total Downloads](https://poser.pugx.org/hiqdev/yii2-pluginmanager/downloads)](https://packagist.org/packages/hiqdev/yii2-pluginmanager)
+[![Build Status](https://img.shields.io/travis/hiqdev/yii2-pluginmanager.svg)](https://travis-ci.org/hiqdev/yii2-pluginmanager)
+[![Scrutinizer Code Coverage](https://img.shields.io/scrutinizer/coverage/g/hiqdev/yii2-pluginmanager.svg)](https://scrutinizer-ci.com/g/hiqdev/yii2-pluginmanager/)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/hiqdev/yii2-pluginmanager.svg)](https://scrutinizer-ci.com/g/hiqdev/yii2-pluginmanager/)
 [![Dependency Status](https://www.versioneye.com/php/hiqdev:yii2-pluginmanager/dev-master/badge.svg)](https://www.versioneye.com/php/hiqdev:yii2-pluginmanager/dev-master)
 
-Provides plugin system for Yii2.
-Automatic loading of plugins configurations with caching.
+ABANDONED in favour of [hiqdev/composer-config-plugin](https://github.com/hiqdev/composer-config-plugin)
+=================
 
 ## Installation
 
@@ -34,4 +36,4 @@ to the require section of your composer.json.
 This project is released under the terms of the BSD-3-Clause [license](LICENSE).
 Read more [here](http://choosealicense.com/licenses/bsd-3-clause).
 
-Copyright © 2015, HiQDev (http://hiqdev.com/)
+Copyright © 2015-2016, HiQDev (http://hiqdev.com/)
