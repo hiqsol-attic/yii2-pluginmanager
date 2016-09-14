@@ -1,8 +1,8 @@
 package:
     type:           yii2-extension
     name:           yii2-pluginmanager
-    title:          ABANDONED Plugin Manager for Yii2
-    headline:       ABANDONED Yii2 Plugin Manager
+    title:          ABANDONED in favour of hiqdev/composer-config-plugin
+    headline:       ABANDONED
     keywords:       plugin, manager, extension, yii2
     namespace:      hiqdev\pluginmanager
     description:    |

@@ -1,7 +1,7 @@
 {
     "name": "hiqdev/yii2-pluginmanager",
     "type": "yii2-extension",
-    "description": "ABANDONED Plugin Manager for Yii2",
+    "description": "ABANDONED in favour of hiqdev/composer-config-plugin",
     "keywords": [
         "plugin",
         "manager",

@@ -1,7 +1,7 @@
-ABANDONED Yii2 Plugin Manager
-=============================
+ABANDONED
+=========
 
-**ABANDONED Plugin Manager for Yii2**
+**ABANDONED in favour of hiqdev/composer-config-plugin**
 
 [![Latest Stable Version](https://poser.pugx.org/hiqdev/yii2-pluginmanager/v/stable)](https://packagist.org/packages/hiqdev/yii2-pluginmanager)
 [![Total Downloads](https://poser.pugx.org/hiqdev/yii2-pluginmanager/downloads)](https://packagist.org/packages/hiqdev/yii2-pluginmanager)
